@@ -1,0 +1,195 @@
+from dataclasses import dataclass
+from datetime import datetime, timedelta
+from typing import List, Dict, Optional
+
+@dataclass
+class MetricResult:
+    value: float
+    unit: str
+    timestamp: datetime
+    metadata: Dict = None
+
+class ApplicationMetrics:
+    """Application volume and screening metrics"""
+    
+    def total_applications(self, start_date: datetime, end_date: datetime, 
+                         applications: List[Dict]) -> MetricResult:
+        """Total number of applications received"""
+        count = sum(1 for app in applications 
+                   if start_date <= app['date'] <= end_date)
+        return MetricResult(count, "applications", datetime.now())
+
+    def initial_screening_count(self, applications: List[Dict]) -> MetricResult:
+        """Number of resumes screened in first round"""
+        screened = sum(1 for app in applications if app['screened'])
+        return MetricResult(screened, "resumes", datetime.now())
+
+    def qualified_resume_ratio(self, applications: List[Dict]) -> MetricResult:
+        """Percentage of resumes meeting initial qualifications"""
+        total = len(applications)
+        qualified = sum(1 for app in applications if app['qualified'])
+        ratio = (qualified / total * 100) if total > 0 else 0
+        return MetricResult(ratio, "percent", datetime.now())
+
+    def avg_screening_time(self, screening_times: List[int]) -> MetricResult:
+        """Average time spent screening each resume"""
+        avg_time = sum(screening_times) / len(screening_times) if screening_times else 0
+        return MetricResult(avg_time, "minutes", datetime.now())
+
+class InterviewMetrics:
+    """Interview-related metrics"""
+    
+    def interview_invitation_rate(self, applications: List[Dict]) -> MetricResult:
+        """Percentage of candidates invited to first interview"""
+        total = len(applications)
+        invited = sum(1 for app in applications if app['invited_to_interview'])
+        rate = (invited / total * 100) if total > 0 else 0
+        return MetricResult(rate, "percent", datetime.now())
+
+    def time_to_first_interview(self, applications: List[Dict]) -> MetricResult:
+        """Average time between screening and first interview"""
+        times = [
+            (app['first_interview_date'] - app['screening_date']).days
+            for app in applications
+            if app['first_interview_date'] and app['screening_date']
+        ]
+        avg_time = sum(times) / len(times) if times else 0
+        return MetricResult(avg_time, "days", datetime.now())
+
+    def interviews_per_hire(self, hires: List[Dict]) -> MetricResult:
+        """Average number of interviews conducted per successful hire"""
+        total_interviews = sum(hire['interview_count'] for hire in hires)
+        avg = total_interviews / len(hires) if hires else 0
+        return MetricResult(avg, "interviews", datetime.now())
+
+class OfferMetrics:
+    """Offer-related metrics"""
+    
+    def offer_rate(self, final_interviews: int, offers: int) -> MetricResult:
+        """Percentage of final interviewees receiving offers"""
+        rate = (offers / final_interviews * 100) if final_interviews > 0 else 0
+        return MetricResult(rate, "percent", datetime.now())
+
+    def offer_acceptance_rate(self, offers: List[Dict]) -> MetricResult:
+        """Percentage of offers accepted"""
+        total = len(offers)
+        accepted = sum(1 for offer in offers if offer['accepted'])
+        rate = (accepted / total * 100) if total > 0 else 0
+        return MetricResult(rate, "percent", datetime.now())
+
+class CostMetrics:
+    """Cost and financial metrics"""
+    
+    def cost_per_hire(self, total_cost: float, hires: int) -> MetricResult:
+        """Average cost per hire"""
+        cost = total_cost / hires if hires > 0 else 0
+        return MetricResult(cost, "currency", datetime.now())
+
+    def agency_cost_per_hire(self, agency_costs: Dict[str, float], 
+                           agency_hires: Dict[str, int]) -> MetricResult:
+        """Cost per hire through agencies"""
+        total_cost = sum(agency_costs.values())
+        total_hires = sum(agency_hires.values())
+        cost = total_cost / total_hires if total_hires > 0 else 0
+        return MetricResult(cost, "currency", datetime.now())
+
+    def referral_program_costs(self, referrals: List[Dict]) -> MetricResult:
+        """Total cost of employee referral program"""
+        total = sum(ref['bonus_amount'] for ref in referrals)
+        return MetricResult(total, "currency", datetime.now())
+
+class QualityMetrics:
+    """Quality and success metrics"""
+    
+    def cultural_fit_rate(self, new_hires: List[Dict]) -> MetricResult:
+        """Cultural fit score for new hires"""
+        scores = [hire['cultural_fit_score'] for hire in new_hires]
+        avg_score = sum(scores) / len(scores) if scores else 0
+        return MetricResult(avg_score, "score", datetime.now())
+
+    def skill_match_percentage(self, candidates: List[Dict]) -> MetricResult:
+        """Percentage match between required and actual skills"""
+        matches = [
+            len(set(c['required_skills']) & set(c['actual_skills'])) / 
+            len(c['required_skills']) * 100
+            for c in candidates
+            if c['required_skills']
+        ]
+        avg_match = sum(matches) / len(matches) if matches else 0
+        return MetricResult(avg_match, "percent", datetime.now())
+
+class SourceMetrics:
+    """Recruitment source effectiveness metrics"""
+    
+    def referral_hire_rate(self, referrals: List[Dict], 
+                          total_hires: int) -> MetricResult:
+        """Percentage of hires from employee referrals"""
+        referral_hires = sum(1 for ref in referrals if ref['hired'])
+        rate = (referral_hires / total_hires * 100) if total_hires > 0 else 0
+        return MetricResult(rate, "percent", datetime.now())
+
+    def source_effectiveness(self, source_data: Dict[str, Dict]) -> Dict[str, MetricResult]:
+        """Effectiveness metrics for each recruitment source"""
+        results = {}
+        for source, data in source_data.items():
+            conversion = (data['hires'] / data['applications'] * 100) 
+            if data['applications'] > 0 else 0
+            results[source] = MetricResult(conversion, "percent", datetime.now())
+        return results
+
+class TimeMetrics:
+    """Time-based recruitment metrics"""
+    
+    def time_to_fill(self, positions: List[Dict]) -> MetricResult:
+        """Average time from job posting to position filled"""
+        times = [
+            (pos['hire_date'] - pos['posting_date']).days
+            for pos in positions
+            if pos['hire_date'] and pos['posting_date']
+        ]
+        avg_time = sum(times) / len(times) if times else 0
+        return MetricResult(avg_time, "days", datetime.now())
+
+    def time_to_start(self, hires: List[Dict]) -> MetricResult:
+        """Average time from first contact to start date"""
+        times = [
+            (hire['start_date'] - hire['first_contact_date']).days
+            for hire in hires
+            if hire['start_date'] and hire['first_contact_date']
+        ]
+        avg_time = sum(times) / len(times) if times else 0
+        return MetricResult(avg_time, "days", datetime.now())
+
+# Usage Example
+def demonstrate_metrics():
+    # Sample data
+    applications = [
+        {
+            'date': datetime.now(),
+            'screened': True,
+            'qualified': True,
+            'invited_to_interview': True,
+            'screening_date': datetime.now() - timedelta(days=10),
+            'first_interview_date': datetime.now() - timedelta(days=5)
+        }
+    ]
+
+    # Initialize metrics
+    app_metrics = ApplicationMetrics()
+    interview_metrics = InterviewMetrics()
+    offer_metrics = OfferMetrics()
+    
+    # Calculate metrics
+    total_apps = app_metrics.total_applications(
+        datetime.now() - timedelta(days=30),
+        datetime.now(),
+        applications
+    )
+    
+    qualified_ratio = app_metrics.qualified_resume_ratio(applications)
+    
+    print(f"Total Applications: {total_apps.value}")
+    print(f"Qualified Resume Ratio: {qualified_ratio.value}%")
+
+if __name__ == "__main__":
+    demonstrate_metrics()
