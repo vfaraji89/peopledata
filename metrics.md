@@ -1,10 +1,4 @@
-# Using Metrics in People Data
 
-## Author Information
-Vahid Faraji  
-Product Manager at Kariyer.net
-
-*This document is open-source and may contain technical refinements pending. The author welcomes analytical feedback and technical contributions. For enterprise implementation, please ensure proper licensing and compliance.*
 
 ## Metric Significance
 
