@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People Data Architecture</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fafafa;
+      color: #333;
+    }
+    
+    .architecture-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .layer {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s forwards;
+    }
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .layer-header {
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.2rem;
+      color: white;
+    }
+    
+    .layer-components {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      background-color: white;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .component {
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      border-right: 1px solid rgba(0,0,0,0.1);
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeComponent 0.3s forwards;
+    }
+    
+    @keyframes fadeComponent {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .component:last-child {
+      border-right: none;
+    }
+    
+    .connector {
+      display: flex;
+      justify-content: space-around;
+      height: 30px;
+    }
+    
+    .arrow {
+      width: 2px;
+      background-color: #888;
+      position: relative;
+      height: 0;
+      animation: growArrow 0.4s forwards;
+      animation-delay: 0.5s;
+    }
+    
+    @keyframes growArrow {
+      to {
+        height: 100%;
+      }
+    }
+    
+    .arrow:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -4px;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #888;
+      opacity: 0;
+      animation: showArrowhead 0.2s forwards;
+      animation-delay: 0.9s;
+    }
+    
+    @keyframes showArrowhead {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    /* Layer-specific colors */
+    .collection .layer-header { background-color: #2196F3; animation-delay: 0.1s; }
+    .integration .layer-header { background-color: #00BCD4; animation-delay: 0.3s; }
+    .storage .layer-header { background-color: #009688; animation-delay: 0.5s; }
+    .processing .layer-header { background-color: #4CAF50; animation-delay: 0.7s; }
+    .governance .layer-header { background-color: #FFC107; animation-delay: 0.9s; }
+    .presentation .layer-header { background-color: #FF5722; animation-delay: 1.1s; }
+    
+    /* Component animations */
+    .collection { animation-delay: 0.1s; }
+    .integration { animation-delay: 0.3s; }
+    .storage { animation-delay: 0.5s; }
+    .processing { animation-delay: 0.7s; }
+    .governance { animation-delay: 0.9s; }
+    .presentation { animation-delay: 1.1s; }
+    
+    .component:nth-child(1) { animation-delay: calc(var(--base-delay) + 0.1s); }
+    .component:nth-child(2) { animation-delay: calc(var(--base-delay) + 0.2s); }
+    .component:nth-child(3) { animation-delay: calc(var(--base-delay) + 0.3s); }
+    .component:nth-child(4) { animation-delay: calc(var(--base-delay) + 0.4s); }
+    .component:nth-child(5) { animation-delay: calc(var(--base-delay) + 0.5s); }
+    .component:nth-child(6) { animation-delay: calc(var(--base-delay) + 0.6s); }
+    
+    .collection .component { --base-delay: 0.2s; }
+    .integration .component { --base-delay: 0.4s; }
+    .storage .component { --base-delay: 0.6s; }
+    .processing .component { --base-delay: 0.8s; }
+    .governance .component { --base-delay: 1.0s; }
+    .presentation .component { --base-delay: 1.2s; }
+    
+    /* For better mobile display */
+    @media (max-width: 768px) {
+      .layer-components {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .component {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+      }
+      
+      .component:nth-last-child(-n+3) {
+        border-bottom: none;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .layer-components {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .component {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+      }
+      
+      .component:nth-last-child(-n+2) {
+        border-bottom: none;
+      }
+    }
+    
+    .replay-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    
+    .replay-button:hover {
+      background-color: #1976D2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Modern People Data Architecture</h1>
+  <p>An animated visualization of the six layers of a comprehensive people data stack</p>
+  
+  <div class="architecture-container">
+    <div class="layer collection">
+      <div class="layer-header">COLLECTION LAYER</div>
+      <div class="layer-components">
+        <div class="component">HRIS Systems</div>
+        <div class="component">Survey Platforms</div>
+        <div class="component">Workplace Analytics</div>
+        <div class="component">Passive Collection</div>
+        <div class="component">IoT/ Wearables</div>
+        <div class="component">External APIs</div>
+      </div>
+    </div>
+    
+    <div class="connector">
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+    </div>
+    
+    <div class="layer integration">
+      <div class="layer-header">INTEGRATION LAYER</div>
+      <div class="layer-components">
+        <div class="component">APIs Gateway</div>
+        <div class="component">Event Bus</div>
+        <div class="component">ETL Pipelines</div>
+        <div class="component">Streaming Processors</div>
+        <div class="component">Identity Resolution</div>
+        <div class="component">Consent Manager</div>
+      </div>
+    </div>
+    
+    <div class="connector">
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+    </div>
+    
+    <div class="layer storage">
+      <div class="layer-header">STORAGE LAYER</div>
+      <div class="layer-components">
+        <div class="component">Data Lake</div>
+        <div class="component">Data Warehouse</div>
+        <div class="component">Structured Databases</div>
+        <div class="component">Time Series</div>
+        <div class="component">Document Store</div>
+        <div class="component">Feature Store</div>
+      </div>
+    </div>
+    
+    <div class="connector">
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+    </div>
+    
+    <div class="layer processing">
+      <div class="layer-header">PROCESSING LAYER</div>
+      <div class="layer-components">
+        <div class="component">Batch Analytics</div>
+        <div class="component">Real-time Analytics</div>
+        <div class="component">AI Pipelines</div>
+        <div class="component">Statistical Analysis</div>
+        <div class="component">Synthetic Data</div>
+        <div class="component">Privacy Computing</div>
+      </div>
+    </div>
+    
+    <div class="connector">
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+    </div>
+    
+    <div class="layer governance">
+      <div class="layer-header">GOVERNANCE LAYER</div>
+      <div class="layer-components">
+        <div class="component">Access Control</div>
+        <div class="component">Compliance Manager</div>
+        <div class="component">Metadata Catalog</div>
+        <div class="component">Lineage Tracking</div>
+        <div class="component">Purpose Registry</div>
+        <div class="component">Retention Manager</div>
+      </div>
+    </div>
+    
+    <div class="connector">
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+    </div>
+    
+    <div class="layer presentation">
+      <div class="layer-header">PRESENTATION LAYER</div>
+      <div class="layer-components">
+        <div class="component">Analytics Dashboards</div>
+        <div class="component">Self Service</div>
+        <div class="component">Executive Reporting</div>
+        <div class="component">Embedded Insights</div>
+        <div class="component">Automation Triggers</div>
+        <div class="component">API Services</div>
+      </div>
+    </div>
+  </div>
+  
+  <button class="replay-button" onclick="replayAnimation()">Replay Animation</button>
+  
+  <script>
+    function replayAnimation() {
+      const layers = document.querySelectorAll('.layer');
+      const arrows = document.querySelectorAll('.arrow');
+      const components = document.querySelectorAll('.component');
+      
+      // Reset animations
+      layers.forEach(layer => {
+        layer.style.animation = 'none';
+        layer.offsetHeight; // Trigger reflow
+        layer.style.animation = null;
+      });
+      
+      arrows.forEach(arrow => {
+        arrow.style.animation = 'none';
+        arrow.offsetHeight; // Trigger reflow
+        arrow.style.animation = null;
+      });
+      
+      components.forEach(component => {
+        component.style.animation = 'none';
+        component.offsetHeight; // Trigger reflow
+        component.style.animation = null;
+      });
+    }
+  </script>
+</body>
+</html>
