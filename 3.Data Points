@@ -1,0 +1,160 @@
+# People Data
+
+## Table of Contents
+
+- [Personal Identification](#1-personal-identification)
+- [Contact Information](#2-contact-information)
+- [Employment Data](#3-employment-data)
+- [Educational Background](#4-educational-background)
+- [Skills Profile](#5-skills-profile)
+- [Professional Development](#6-professional-development)
+- [Compensation & Benefits](#7-compensation--benefits)
+- [Work Schedule & Attendance](#8-work-schedule--attendance)
+- [Social & Digital Identity](#9-social--digital-identity)
+- [Project History](#10-project-history)
+- [Compliance & Documentation](#11-compliance--documentation)
+- [Personal Preferences](#12-personal-preferences)
+
+## 1. Personal Identification
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Full Name | Saeid Hosseini |
+| 2 | First Name | Saeid |
+| 3 | Last Name | Hosseini |
+| 4 | Gender | Male |
+| 5 | Birth Date | 1990-05-15 |
+| 6 | National ID/Passport Number | 0012345678 |
+| 7 | Marital Status | Married |
+| 8 | Emergency Contact | Mina Hosseini (+98 912 987 6543) |
+
+## 2. Contact Information
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Work Email | saeid@company.com |
+| 2 | Personal Email | saeid.h@gmail.com |
+| 3 | Mobile Phone | +98 912 123 4567 |
+| 4 | Home Phone | +98 21 2233 4455 |
+| 5 | Work Address | 25 Azadi St., Tehran |
+| 6 | Home Address | Apt. 12, 7 Bahar St., Tehran |
+| 7 | Preferred Contact Method | Email |
+
+## 3. Employment Data
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Personnel ID | EMP-2021-0042 |
+| 2 | Job Title | Product Manager |
+| 3 | Department | Product Development |
+| 4 | Role Category | Management |
+| 5 | Seniority Level | Mid-Level |
+| 6 | Company Name | Tech Solutions Inc. |
+| 7 | Industry | Information Technology |
+| 8 | Company Size | 201-500 |
+| 9 | Employment Type | Full-time |
+| 10 | Start Date | 2021-01-01 |
+| 11 | End Date | Present |
+| 12 | Job Summary | Responsible for managing product lifecycle |
+| 13 | Direct Manager | Ali Ahmadi (CTO) |
+| 14 | Subordinates | 4 team members |
+
+## 4. Educational Background
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Institution Name | University of Tehran |
+| 2 | Degree | Bachelor of Science |
+| 3 | Field of Study | Computer Science |
+| 4 | Start Date | 2008 |
+| 5 | End Date | 2012 |
+| 6 | GPA/Achievements | 3.8/4.0, Dean's List |
+| 7 | Specialization | Software Development |
+| 8 | Certifications | PMP, Scrum Master, AWS Solutions Architect |
+
+## 5. Skills Profile
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Technical Skills | Product Management, Data Analysis, SQL |
+| 2 | Soft Skills | Leadership, Communication, Problem-solving |
+| 3 | Languages | Persian (Native), English (Fluent), Arabic (Basic) |
+| 4 | Tools & Software | JIRA, Figma, Excel, PowerBI |
+| 5 | Industry Knowledge | SaaS, E-commerce, FinTech |
+| 6 | Strengths | Strategic planning, User-centered design |
+| 7 | Areas for Development | Public speaking, Advanced data visualization |
+
+## 6. Professional Development
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Performance Review Date | 2023-06-01 |
+| 2 | Performance Rating | Excellent (4.8/5) |
+| 3 | Training Completed | Data Analytics, Leadership Training |
+| 4 | Career Path | Director track |
+| 5 | Development Goals | ML/AI certification by Q4 2023 |
+| 6 | Mentorship Status | Mentoring 2 junior staff |
+
+## 7. Compensation & Benefits
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Base Salary | $75,000 annually |
+| 2 | Variable Compensation | 15% performance bonus |
+| 3 | Benefits Package | Health insurance, retirement plan |
+| 4 | Equity/Stock Options | 1,000 shares vesting over 4 years |
+| 5 | Salary Review Date | January 15, annually |
+| 6 | Tax Information | Tax ID: 85642198 |
+
+## 8. Work Schedule & Attendance
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Work Schedule | Monday-Thursday 9am-6pm, Friday 9am-1pm |
+| 2 | Time Zone | GMT+3:30 |
+| 3 | Remote Work Status | Hybrid (2 days remote/week) |
+| 4 | Leave Balance | Annual: 14 days, Sick: 7 days |
+| 5 | Leave History | Used 5 annual days (Jan 5-9, 2023) |
+
+## 9. Social & Digital Identity
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | LinkedIn URL | linkedin.com/in/saeidhosseini |
+| 2 | GitHub | github.com/saeidh |
+| 3 | Twitter | twitter.com/saeidh |
+| 4 | Professional Website | saeidhosseini.com |
+| 5 | Portfolio | behance.net/saeidhosseini |
+| 6 | Digital Footprint Summary | Active tech community contributor |
+
+## 10. Project History
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Project Name | Mobile App Redesign |
+| 2 | Role | Project Lead |
+| 3 | Duration | Q1-Q2 2022 |
+| 4 | Outcomes | 35% increase in user engagement |
+| 5 | Key Contributions | Stakeholder management, UX direction |
+
+## 11. Compliance & Documentation
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Contract Version | V3.2 (updated 2022-03-15) |
+| 2 | Required Credentials | Work permit, security clearance |
+| 3 | Confidentiality Agreements | NDA signed on 2021-01-01 |
+| 4 | Compliance Training | GDPR (completed 2022-11-30) |
+| 5 | Legal Restrictions | No compete clause until 2024 |
+
+## 12. Personal Preferences
+
+| Number | Data Type | Example |
+|--------|-----------|---------|
+| 1 | Interests | Technology, Data Analysis, Hiking |
+| 2 | Communication Style | Direct, prefers written communication |
+| 3 | Learning Preferences | Visual learner, hands-on workshops |
+| 4 | Work Environment | Prefers quiet collaborative spaces |
+| 5 | Recognition Preferences | Values public acknowledgment |
+
+
