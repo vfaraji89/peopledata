@@ -1,59 +1,5 @@
 # People Data
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
-  <!-- Background - clean white -->
-  <rect width="400" height="300" fill="#f5f5f5"/>
-  
-  <!-- Wooden frame legs -->
-  <rect x="100" y="50" width="15" height="200" fill="#8B4513" />
-  <rect x="285" y="50" width="15" height="200" fill="#8B4513" />
-  
-  <!-- Horizontal bars -->
-  <rect x="100" y="70" width="200" height="5" fill="#A9A9A9" />
-  <rect x="100" y="110" width="200" height="5" fill="#A9A9A9" />
-  <rect x="100" y="150" width="200" height="5" fill="#A9A9A9" />
-  <rect x="100" y="190" width="200" height="5" fill="#A9A9A9" />
-  <rect x="100" y="230" width="200" height="5" fill="#A9A9A9" />
-  
-  <!-- Beads - Row 1 -->
-  <rect x="120" y="63" width="20" height="20" fill="#8B4513" rx="2" ry="2" />
-  <rect x="150" y="63" width="20" height="20" fill="#8B4513" rx="2" ry="2" />
-  <rect x="180" y="63" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  <rect x="210" y="63" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  <rect x="240" y="63" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  <rect x="270" y="63" width="5" height="20" fill="transparent" />
-  
-  <!-- Beads - Row 2 -->
-  <rect x="120" y="103" width="20" height="20" fill="#8B4513" rx="2" ry="2" />
-  <rect x="150" y="103" width="20" height="20" fill="#8B4513" rx="2" ry="2" />
-  <rect x="180" y="103" width="20" height="20" fill="#8B4513" rx="2" ry="2" />
-  <rect x="210" y="103" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  <rect x="240" y="103" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  
-  <!-- Beads - Row 3 -->
-  <rect x="120" y="143" width="20" height="20" fill="#000000" rx="2" ry="2" />
-  <rect x="150" y="143" width="20" height="20" fill="#000000" rx="2" ry="2" />
-  <rect x="180" y="143" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  <rect x="210" y="143" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  <rect x="240" y="143" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  
-  <!-- Beads - Row 4 -->
-  <rect x="120" y="183" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
-  <rect x="150" y="183" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
-  <rect x="180" y="183" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
-  <rect x="210" y="183" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
-  <rect x="240" y="183" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
-  
-  <!-- Beads - Row 5 -->
-  <rect x="120" y="223" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
-  <rect x="150" y="223" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  <rect x="180" y="223" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  <rect x="210" y="223" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-  <rect x="240" y="223" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
-</svg>
-
-## Curriculum:
-
 ### 1. People Data Structure
 * Introduction
 * People Data and People Analytics
@@ -103,19 +49,8 @@ MIT License
 Copyright (c) 2025 Vahid Faraji
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+of this and associated documentation files. For Business use cases please please contact or inform me by email
+vfaraji89 at gmail dot com
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
