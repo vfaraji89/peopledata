@@ -1,6 +1,59 @@
 
 # People Data 
 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Background - clean white -->
+  <rect width="400" height="300" fill="#f5f5f5"/>
+  
+  <!-- Wooden frame legs -->
+  <rect x="100" y="50" width="15" height="200" fill="#8B4513" />
+  <rect x="285" y="50" width="15" height="200" fill="#8B4513" />
+  
+  <!-- Horizontal bars -->
+  <rect x="100" y="70" width="200" height="5" fill="#A9A9A9" />
+  <rect x="100" y="110" width="200" height="5" fill="#A9A9A9" />
+  <rect x="100" y="150" width="200" height="5" fill="#A9A9A9" />
+  <rect x="100" y="190" width="200" height="5" fill="#A9A9A9" />
+  <rect x="100" y="230" width="200" height="5" fill="#A9A9A9" />
+  
+  <!-- Beads - Row 1 -->
+  <rect x="120" y="63" width="20" height="20" fill="#8B4513" rx="2" ry="2" />
+  <rect x="150" y="63" width="20" height="20" fill="#8B4513" rx="2" ry="2" />
+  <rect x="180" y="63" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  <rect x="210" y="63" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  <rect x="240" y="63" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  <rect x="270" y="63" width="5" height="20" fill="transparent" />
+  
+  <!-- Beads - Row 2 -->
+  <rect x="120" y="103" width="20" height="20" fill="#8B4513" rx="2" ry="2" />
+  <rect x="150" y="103" width="20" height="20" fill="#8B4513" rx="2" ry="2" />
+  <rect x="180" y="103" width="20" height="20" fill="#8B4513" rx="2" ry="2" />
+  <rect x="210" y="103" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  <rect x="240" y="103" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  
+  <!-- Beads - Row 3 -->
+  <rect x="120" y="143" width="20" height="20" fill="#000000" rx="2" ry="2" />
+  <rect x="150" y="143" width="20" height="20" fill="#000000" rx="2" ry="2" />
+  <rect x="180" y="143" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  <rect x="210" y="143" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  <rect x="240" y="143" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  
+  <!-- Beads - Row 4 -->
+  <rect x="120" y="183" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
+  <rect x="150" y="183" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
+  <rect x="180" y="183" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
+  <rect x="210" y="183" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
+  <rect x="240" y="183" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
+  
+  <!-- Beads - Row 5 -->
+  <rect x="120" y="223" width="20" height="20" fill="#CD853F" rx="2" ry="2" />
+  <rect x="150" y="223" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  <rect x="180" y="223" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  <rect x="210" y="223" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+  <rect x="240" y="223" width="20" height="20" fill="#f5f5f5" rx="2" ry="2" />
+</svg>
+
+
 # Curriculum: 
 
 ## 1. People Data Structure
