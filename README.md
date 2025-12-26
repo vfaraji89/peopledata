@@ -20,16 +20,30 @@
 * Introduction to Automation Tools
 * Basic Scripting for Automation People Data
 
-### 5. Key Data Points
+### 5. Applied AI in People Data 🤖 **NEW**
+* Practical NLP Applications in HR
+* Resume Parsing and Analysis with LLMs
+* Semantic Skill Matching with Embeddings
+* Predictive Analytics for Employee Turnover
+* Automated Candidate Screening Systems
+* Sentiment Analysis for Employee Feedback
+* AI-Driven Job Description Generation
+* Bias Detection and Fairness in AI
+* Production Implementation Best Practices
+* Complete Code Examples and Use Cases
+* **📚 [Anthropic Resources](https://github.com/anthropics)**: Skills, Cookbooks, Courses
+* **🔗 [Quick Reference Guide](AI_RESOURCES_QUICKREF.md)**: All resources in one place
+
+### 6. Key Data Points
 * Data Factors
 * Critical Data Points in HR
 * Trends and Patterns in HR Data
 
-### 6. Insight Extraction
+### 7. Insight Extraction
 * Extracting Practical Insights from Data
 * Interpreting Statistical Results
 
-### 7. Introduction to NLP and LLMs in HR
+### 8. Introduction to NLP and LLMs in HR
 * Basics of NLP and Large Language Models
 * NLP, LLM in HR
 * Embeddings for Classifying HR Data
