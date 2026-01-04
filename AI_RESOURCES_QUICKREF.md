@@ -1,6 +1,5 @@
 # 🔗 AI Resources for People Data - Quick Reference
 
-A curated list of essential resources for building AI-powered People Analytics solutions.
 
 ## 🎓 Anthropic Resources (Start Here!)
 
