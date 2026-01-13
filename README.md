@@ -96,25 +96,15 @@ With expertise in People Data Analytics, Vahid is passionate about the intersect
 
 ---
 
-## 🤝 Contributing
 
-Contributions are welcome! Whether you want to:
-- 🐛 Report bugs or issues
-- 💡 Suggest new features or topics
-- 📝 Improve documentation
-- 🔧 Submit code examples or improvements
 
 Feel free to open an issue or submit a pull request. Let's build a better resource for the People Analytics community together!
 
 ---
 
-## 📧 Contact
 
-Have questions or want to discuss People Data Analytics?
 
 - 📧 Email: vfaraji89 at gmail dot com
-- 💼 Professional inquiries welcome
-- 🤝 Open to collaboration opportunities
 
 For enterprise implementations, licensing questions, or business use cases, please reach out via email.
 
